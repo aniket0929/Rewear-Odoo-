@@ -15,17 +15,20 @@ Team members-
 
 
 
-## Getting Started
 
-First, run the development server:
+1. Added the AddItem functionality, 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. Added the dashboard, browseItem functionality
+
+3. Added User authentication using Clerk auth 
+
+4. Use Convex for Backend and UploadThing for Uploading imageUrl
+
+5. Added the show All products functionality 
+
+6. The Purchase item filter was in progress couldnt figure out why the product details page wasnt loading tho it was created 
+
+7. Couldnt figure why image urls werent being sent to the backend 
+
+8. Didnt add the admin page due to time constraints
 

@@ -1,7 +1,7 @@
-import AllProducts from "@/app/_components/AllProducts";
 import CategoryCards from "@/app/_components/CategoryCards";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import AllProducts from "./_components/AllProducts";
 
 
 export default function Home() {
@@ -35,7 +35,7 @@ export default function Home() {
       {/* All Products Section */}
       <section className="py-10 px-4 max-w-6xl mx-auto">
         <h3 className="text-2xl font-semibold mb-6">Explore All Items</h3>
-        <AllProducts />
+        <AllProducts category={""} type={""} />
       </section>
     </div>
   );

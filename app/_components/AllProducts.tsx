@@ -4,10 +4,13 @@ import { useEffect, useState } from "react";
 import { useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import { Button } from "@/components/ui/button";
-
+type AllProductsProps = {
+  category: string;
+  type: string;
+};
 const PAGE_SIZE = 8;
 
-export default function AllProducts() {
+export default function AllProducts({ category, type }: AllProductsProps) {
   const [page, setPage] = useState(0);
   const [items, setItems] = useState<any[]>([]);
 

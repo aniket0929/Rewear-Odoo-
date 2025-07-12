@@ -1,7 +1,7 @@
-'use client'
+"use client"
 
-import { useQuery } from 'convex/react'
-import { api } from '@/convex/_generated/api'
+import { useQuery } from "convex/react"
+import { api } from "@/convex/_generated/api"
 
 export default function UserPurchases() {
   const purchases = useQuery(api.purchases.getUserPurchases)
@@ -10,12 +10,15 @@ export default function UserPurchases() {
 
   return (
     <div className="bg-white p-4 rounded shadow">
-      <h2 className="text-xl font-bold mb-2">Your Purchases</h2>
-      <ul className="space-y-2">
-        {purchases.map(purchase => (
-          <li key={purchase._id}>
-            <p className="font-semibold">{purchase.itemTitle}</p>
-            <p className="text-sm text-gray-600">Date: {new Date(purchase.date).toLocaleDateString()}</p>
+      <h2 className="text-xl font-bold mb-4">Your Purchases</h2>
+      <ul className="space-y-4">
+        {purchases.map((purchase) => (
+          <li key={purchase._id} className="p-4 border rounded">
+            <p className="font-semibold">{purchase.itemTitle || "Item unavailable"}</p>
+            <p className="text-sm text-gray-600">
+              Purchased on:{" "}
+              {new Date(purchase.date).toLocaleDateString()}
+            </p>
           </li>
         ))}
       </ul>

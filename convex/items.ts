@@ -21,7 +21,7 @@ export const addItem = mutation({
         if(!identity){
             throw new Error("Unauthorized")
         }
-
+     
     await ctx.db.insert("items", {
       ...args,
        userId: identity.subject, 
@@ -43,6 +43,15 @@ export const getItemsByUser = query({
   },
 });
 
+// convex/items.ts
+export const getItemById = query({
+  args: { id: v.id("items") },
+  handler: async (ctx, args) => {
+    const item = await ctx.db.get(args.id);
+    if (!item) throw new Error("Item not found");
+    return item;
+  },
+});
 
 
 

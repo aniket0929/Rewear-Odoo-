@@ -1,41 +1,29 @@
-import AllProducts from "@/app/_components/AllProducts";
-import CategoryCards from "@/app/_components/CategoryCards";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+"use client";
+
+import UserPurchases from "@/app/_components/getUserPurchases";
+import UserDetails from "@/app/_components/UserDetails";
+import UserListings from "@/app/_components/UserListings";
 
 
-export default function Home() {
+export default function DashboardPage() {
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-800">
-      {/* Hero Section */}
-      <section className="text-center py-16 bg-green-50">
-        <h2 className="text-4xl font-bold mb-4">Swap, Save, Sustain</h2>
-        <p className="text-lg text-gray-600 mb-6 max-w-xl mx-auto">
-          ReWear helps you exchange unused clothing directly or via a point-based system. Join our mission to reduce textile waste and promote sustainable fashion.
-        </p>
-        <div className="flex justify-center gap-4">
-          <Link href="/dashboard">
-            <Button>Start Swapping</Button>
-          </Link>
-          <Link href="/browse-items">
-            <Button variant="outline">Browse Items</Button>
-          </Link>
-          <Link href="/add-items">
-            <Button variant="outline">List an Item</Button>
-          </Link>
-        </div>
+    <div className="min-h-screen bg-gray-100 text-gray-800 py-10 px-4 max-w-5xl mx-auto space-y-10">
+      {/* User Details */}
+      <section>
+        <h2 className="text-3xl font-bold mb-4">Your Profile</h2>
+        <UserDetails />
       </section>
 
-      {/* Categories Section */}
-      <section className="py-10 px-4 max-w-6xl mx-auto">
-        <h3 className="text-2xl font-semibold mb-6">Categories</h3>
-        <CategoryCards/>
+      {/* User Listings */}
+      <section>
+        <h2 className="text-2xl font-semibold mb-4">Your Listings</h2>
+        <UserListings />
       </section>
 
-      {/* All Products Section */}
-      <section className="py-10 px-4 max-w-6xl mx-auto">
-        <h3 className="text-2xl font-semibold mb-6">Explore All Items</h3>
-        <AllProducts />
+      {/* User Purchases */}
+      <section>
+        <h2 className="text-2xl font-semibold mb-4">Your Purchases</h2>
+        <UserPurchases />
       </section>
     </div>
   );

@@ -34,9 +34,10 @@ export default function AddItemForm() {
     e.preventDefault()
     const tagsArray = form.tags.split(",").map(tag => tag.trim())
     await addItem({
-      ...form,
-      tags: tagsArray,
-      imageUrls: form.imageUrls,
+        ...form,
+        tags: tagsArray,
+        imageUrls: form.imageUrls,
+        userId: ""
     })
     router.push("/dashboard")
   }
